@@ -2,15 +2,16 @@ const SESSION_COOKIE = "spendwise_session";
 const SESSION_MAX_AGE = 24 * 60 * 60 * 1000;
 
 function sessionCookieOptions() {
+  const isProduction = process.env.NODE_ENV === "production";
+
   return {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    secure: isProduction,
+    sameSite: isProduction ? "none" : "lax",
     path: "/",
     maxAge: SESSION_MAX_AGE,
   };
 }
-
 function setSessionCookie(res, token) {
   res.cookie(SESSION_COOKIE, token, sessionCookieOptions());
 }
