@@ -35,10 +35,14 @@ const passwordChangeRateLimit = createRateLimiter({
   maxRequests: 5,
   message: "Too many password change attempts. Please wait 15 minutes before trying again.",
 });
-const allowedOrigins = (process.env.CORS_ORIGINS || "http://localhost:5173")
-  .split(",")
-  .map((origin) => origin.trim())
-  .filter(Boolean);
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://spend-wise-ai-lemon.vercel.app",
+  ...(process.env.CORS_ORIGINS || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+].filter((origin, index, origins) => origins.indexOf(origin) === index);
 
 app.use((req, res, next) => {
   res.setHeader("X-Content-Type-Options", "nosniff");
