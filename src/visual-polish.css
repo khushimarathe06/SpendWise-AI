@@ -1,0 +1,351 @@
+/* Shared SpendWise finishing layer. Component logic and page-specific layout stay intact. */
+
+html,
+body,
+#root {
+  min-width: 320px;
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: clip;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.app :is(input, select, textarea):focus-visible,
+.auth-page :is(input, select, textarea):focus-visible {
+  border-color: var(--sw-lilac);
+  outline: 3px solid rgba(140, 120, 216, .18);
+  outline-offset: 1px;
+}
+
+.sidebar-nav a:focus-visible,
+.sidebar-bottom > a:focus-visible,
+.app button:focus-visible,
+.auth-page button:focus-visible {
+  outline-color: rgba(113, 91, 195, .42);
+}
+
+/* Dashboard */
+.app .summary-card,
+.app .panel {
+  min-width: 0;
+}
+
+.app .summary-card h2 {
+  overflow-wrap: anywhere;
+}
+
+.app .panel-header {
+  gap: 14px;
+}
+
+.app .panel-header select {
+  min-height: 40px;
+}
+
+.app .chart {
+  min-width: 0;
+}
+
+.app .chart-area {
+  min-width: 0;
+}
+
+.app .budget-total strong,
+.app .budget-category small,
+.app .transaction-info strong,
+.app .transaction-info small {
+  overflow-wrap: anywhere;
+}
+
+.app .transaction-row {
+  gap: 12px;
+}
+
+/* Transactions */
+.transactions-page .transactions-summary-card,
+.transactions-page .transactions-table-panel {
+  border-color: var(--sw-line);
+  border-radius: var(--sw-radius-md);
+  box-shadow: var(--sw-shadow);
+}
+
+.transactions-page .transactions-back-btn:hover {
+  border-color: #ded3f3;
+  background: var(--sw-lilac-soft);
+  color: var(--sw-lilac-dark);
+}
+
+.transactions-page .transaction-controls :is(input, select),
+.transactions-page .transaction-edit-input {
+  min-height: 44px;
+  border-color: var(--sw-line);
+  border-radius: var(--sw-radius-sm);
+  color: var(--sw-ink);
+}
+
+.transactions-page .transaction-controls :is(input, select):focus,
+.transactions-page .transaction-edit-input:focus {
+  border-color: var(--sw-lilac);
+  outline: 3px solid rgba(140, 120, 216, .16);
+}
+
+.transactions-page .edit-transaction-btn {
+  color: var(--sw-lilac-dark);
+}
+
+.transactions-page .transaction-actions button {
+  min-height: 38px;
+}
+
+/* Budget and savings page elements */
+.app .budget-edit-form input,
+.app .category-limit-form input,
+.app .savings-form input,
+.app .savings-edit-form input,
+.app .savings-add-form input {
+  min-height: 44px;
+  border-color: var(--sw-line);
+  border-radius: var(--sw-radius-sm);
+}
+
+.app .budget-edit-form input:focus,
+.app .category-limit-form input:focus,
+.app .savings-form input:focus,
+.app .savings-edit-form input:focus,
+.app .savings-add-form input:focus {
+  border-color: var(--sw-lilac);
+  outline: 3px solid rgba(140, 120, 216, .16);
+}
+
+/* Analytics */
+.analytics-page .analytics-header h1,
+.analytics-page .analytics-panel-heading h2,
+.analytics-page .monthly-comparison-card h3,
+.analytics-page .analytics-empty-state h3 {
+  color: var(--sw-ink);
+}
+
+.analytics-page .analytics-eyebrow,
+.analytics-page .analytics-category-bar-label strong {
+  color: var(--sw-lilac-dark);
+}
+
+.analytics-page :is(.analytics-summary-card, .analytics-panel, .monthly-comparison-card) {
+  border-color: var(--sw-line);
+  border-radius: var(--sw-radius-md);
+  box-shadow: var(--sw-shadow);
+}
+
+.analytics-page .analytics-header-icon,
+.analytics-page .analytics-icon.balance-icon {
+  border-color: #e8ddfb;
+  background: var(--sw-lilac-soft);
+  color: var(--sw-lilac-dark);
+}
+
+.analytics-page .analytics-progress-fill,
+.analytics-page .analytics-budget-fill,
+.analytics-page .analytics-category-bar-fill {
+  background: linear-gradient(90deg, #a994e9, #806bd0);
+}
+
+.analytics-page .monthly-comparison-card {
+  background: #fffdfd;
+}
+
+.analytics-page .monthly-comparison-card strong {
+  color: var(--sw-lilac-dark);
+}
+
+/* AI Advisor */
+.advisor-page .advisor-header h1,
+.advisor-page .advisor-chat-header h2,
+.advisor-page .advisor-section-heading h2,
+.advisor-page .advisor-welcome h2 {
+  color: var(--sw-ink);
+}
+
+.advisor-page .advisor-eyebrow,
+.advisor-page .advisor-suggestions button:hover:not(:disabled) {
+  color: var(--sw-lilac-dark);
+}
+
+.advisor-page .advisor-header-icon,
+.advisor-page .advisor-chat-avatar,
+.advisor-page .advisor-message-avatar,
+.advisor-page .advisor-metric-icon,
+.advisor-page .advisor-welcome-icon {
+  background-color: var(--sw-lilac-soft);
+}
+
+.advisor-page .advisor-chat,
+.advisor-page .advisor-welcome,
+.advisor-page .advisor-metric-card,
+.advisor-page .advisor-tip-card {
+  border-color: var(--sw-line);
+  box-shadow: var(--sw-shadow);
+}
+
+.advisor-page .advisor-message-user .advisor-message-bubble {
+  background: var(--sw-lilac);
+}
+
+.advisor-page :is(input, textarea):focus {
+  border-color: var(--sw-lilac);
+  outline: 3px solid rgba(140, 120, 216, .16);
+}
+
+.advisor-page .advisor-chat-form button {
+  background: var(--sw-lilac);
+}
+
+.advisor-page .advisor-chat-form button:hover:not(:disabled) {
+  background: var(--sw-lilac-dark);
+}
+
+.advisor-page .advisor-data-toggle input {
+  accent-color: var(--sw-lilac);
+}
+
+/* Settings */
+.settings-page .settings-grid {
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, .85fr);
+}
+
+.settings-page .settings-card {
+  border-color: var(--sw-line);
+  border-radius: var(--sw-radius-md);
+  box-shadow: var(--sw-shadow);
+}
+
+/* Add transaction dialog */
+.add-transaction-modal {
+  max-height: min(92vh, 760px);
+  overflow-y: auto;
+  border: 1px solid var(--sw-line);
+  border-radius: var(--sw-radius-lg);
+}
+
+.add-transaction-header h2,
+.add-transaction-field label {
+  color: var(--sw-ink);
+}
+
+.add-transaction-field input,
+.add-transaction-field select {
+  min-height: 44px;
+  border-color: var(--sw-line);
+  border-radius: var(--sw-radius-sm);
+  color: var(--sw-ink);
+}
+
+.add-transaction-field input:focus,
+.add-transaction-field select:focus {
+  border-color: var(--sw-lilac);
+  box-shadow: 0 0 0 3px rgba(140, 120, 216, .15);
+}
+
+.add-transaction-save:not(.at-income-save) {
+  background: linear-gradient(135deg, #9e8be4, #806bd0);
+}
+
+.add-transaction-save:not(.at-income-save):hover:not(:disabled) {
+  background: linear-gradient(135deg, #8e79da, #715bc3);
+}
+
+@media (max-width: 800px) {
+  .sidebar-nav a {
+    flex: 1 0 54px;
+    min-width: 54px;
+    min-height: 56px;
+    padding-inline: 4px;
+    font-size: 10px;
+    line-height: 1.2;
+  }
+
+  .sidebar-nav a span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+  .main-content .summary-card {
+    padding: 15px;
+  }
+
+  .main-content .summary-card h2 {
+    font-size: clamp(19px, 6vw, 24px);
+    margin: 14px 0;
+  }
+
+  .main-content .card-top {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .main-content .panel-header {
+    flex-wrap: wrap;
+  }
+
+  .main-content .panel-header select {
+    max-width: 100%;
+  }
+
+  .transactions-page .transactions-table-wrapper {
+    max-width: 100%;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+
+  .settings-page .settings-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .add-transaction-overlay {
+    align-items: flex-end;
+    padding: 8px;
+  }
+
+  .add-transaction-modal {
+    max-height: calc(100dvh - 16px);
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-content .summary-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

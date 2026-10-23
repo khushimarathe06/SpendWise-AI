@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+  --sw-ink: #302b43;
+  --sw-muted: #817b91;
+  --sw-line: #eee8f2;
+  --sw-paper: #fffdfd;
+  --sw-bg: #fbf7fc;
+  --sw-lilac: #8c78d8;
+  --sw-lilac-dark: #715bc3;
+  --sw-lilac-soft: #f0eaff;
+  --sw-pink: #e99bb8;
+  --sw-pink-soft: #fff0f5;
+  --sw-mint: #8acbb4;
+  --sw-mint-soft: #eaf8f1;
+  --sw-peach: #f5c49e;
+  --sw-peach-soft: #fff4e9;
+  --sw-danger: #bd5265;
+  --sw-danger-soft: #fff0f2;
+  --sw-shadow: 0 8px 28px rgba(84, 61, 105, 0.055);
+  --sw-shadow-raised: 0 16px 42px rgba(74, 54, 94, 0.12);
+  --sw-radius-sm: 10px;
+  --sw-radius-md: 16px;
+  --sw-radius-lg: 22px;
+  --sw-space-1: 4px;
+  --sw-space-2: 8px;
+  --sw-space-3: 12px;
+  --sw-space-4: 16px;
+  --sw-space-6: 24px;
+  --sw-space-8: 32px;
+  --sw-transition: 180ms ease;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--sw-ink);
+  background: var(--sw-bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--sw-bg);
+  color: var(--sw-ink);
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--sw-lilac) 34%, transparent);
+  outline-offset: 2px;
+}
+
+::selection {
+  color: var(--sw-ink);
+  background: #e8ddff;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: left;
+}
